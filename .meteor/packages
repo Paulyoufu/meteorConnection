@@ -18,3 +18,12 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
+meteor-platform
+matb33:collection-hooks
+aldeed:collection2
+meteoric:ionic-sass@0.3.0
+meteoric:ionic@0.1.19
+aldeed:autoform@4.2.0
+meteoric:autoform-ionic@0.1.5
+iron:router
+momentjs:moment
