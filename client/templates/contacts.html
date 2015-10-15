@@ -1,21 +1,12 @@
 <template name="contacts">
-
     {{#autoForm id="autoform" collection="Contacts" id="contacts-new-form" type="insert" }}
-
         <div class="bar bar-header bar-stable">
             <button data-dismiss="modal" type="button" class="button button-clear">Cancel</button>
             <h2 class="title">Edit Contact</h2>
             <button id="submit" class="button button-positive button-clear">Add</button>
         </div>
-
-    <!--<img src="3.jpg" id=“img01” style=" width:100px;height:105px;position:absolute;float:right;right:1%;top:65px" alt=""/>
-    <img src="3.jpg" id=“img02” style=" width:100px;height:105px;position:absolute;float:right;right:1%;top:45px" alt=""/>-->
         <div class="content has-header overflow-scroll" style="z-index:-1;">
-
             {{> afQuickFields  options="auto"}}
         </div>
-
-
     {{/autoForm}}
-
 </template>

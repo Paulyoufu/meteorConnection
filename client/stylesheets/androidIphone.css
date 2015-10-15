@@ -1,7 +1,9 @@
-.android{
+.android
+{
     width:100px;height:105px;position:absolute;float:right;right:1%;top:45px
 }
-.ios{
+.ios
+{
     width:100px;height:105px;position:absolute;float:right;right:1%;top:65px
 }
 .content.overflow-scroll { bottom: 0px !important; }

@@ -3,15 +3,3 @@ Meteor.publish('userN', function() {
 });
 
 
-/*Contacts.find({})
-Meteor.publish(null, function () {
-  return [
-    Contacts.find(),
-    PeopleWithContacts.find()
-  ];
-});
-
-Meteor.publish("allItems", function () {
-  return Items.find();
-});
-*/

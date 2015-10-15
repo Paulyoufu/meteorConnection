@@ -1,182 +1,56 @@
-
 Contacts = new Mongo.Collection('userN');
 
-Contacts.before.insert(function (userId, doc) {
-  time= new Date();
-
-  doc.createdAt= moment(time).format();
- console.log("doc.createAT============"+ doc.createdAt);
-});
-
-
-Contacts.before.find(function (userId, selector, options) {
-
-});
-
-
-//Contacts.helpers({
- // datePosted: function () {
-  //  return moment(this.createdAt).format('M/D');
-  //}
-//});
-
-
+Contacts.before.insert(
+    function (userId, doc) {
+      time= new Date();
+      doc.createdAt= moment(time).format();
+    });
 
 Contacts.attachSchema(new SimpleSchema({
-  title: {
+  title:
+  {
     type: String,
     label: "标题",
     max: 200,
-    regEx: /^[a-z0-9A-Z_]{3,15}$/,//3-15 个字母和数字
-    autoform: {
+    regEx: /^[a-z0-9A-Z_]{3,15}$/,
+    autoform:
+    {
       'label-type': 'stacked'
     }
   },
-  body: {
+  body:
+  {
     type: String,
     label: "内容",
-    autoform: {
+    autoform:
+    {
       rows: 10,
       'label-type': 'stacked'
     }
   },
-  published: {
+  published:
+  {
     type: Boolean,
     label: "是否发布",
     defaultValue: true,
-    autoform: {
+    autoform:
+    {
       type: 'toggle'
     }
   },
-  published: {
-    type: Boolean,
-    label: "是否发布",
-    defaultValue: true,
-    autoform: {
-      type: 'toggle'
-    }
-  },published: {
-    type: Boolean,
-    label: "是否发布",
-    defaultValue: true,
-    autoform: {
-      type: 'toggle'
-    }
-  },published: {
-    type: Boolean,
-    label: "是否发布",
-    defaultValue: true,
-    autoform: {
-      type: 'toggle'
-    }
-  },published: {
-    type: Boolean,
-    label: "是否发布",
-    defaultValue: true,
-    autoform: {
-      type: 'toggle'
-    }
-  },published: {
-    type: Boolean,
-    label: "是否发布",
-    defaultValue: true,
-    autoform: {
-      type: 'toggle'
-    }
-  },published: {
-    type: Boolean,
-    label: "是否发布",
-    defaultValue: true,
-    autoform: {
-      type: 'toggle'
-    }
-  },published: {
-    type: Boolean,
-    label: "是否发布",
-    defaultValue: true,
-    autoform: {
-      type: 'toggle'
-    }
-  },published: {
-    type: Boolean,
-    label: "是否发布",
-    defaultValue: true,
-    autoform: {
-      type: 'toggle'
-    }
-  },published9: {
-    type: Boolean,
-    label: "是否发布",
-    defaultValue: true,
-    autoform: {
-      type: 'toggle'
-    }
-  },published8: {
-    type: Boolean,
-    label: "是否发布",
-    defaultValue: true,
-    autoform: {
-      type: 'toggle'
-    }
-  },published7: {
-    type: Boolean,
-    label: "是否发布",
-    defaultValue: true,
-    autoform: {
-      type: 'toggle'
-    }
-  },published6: {
-    type: Boolean,
-    label: "是否发布",
-    defaultValue: true,
-    autoform: {
-      type: 'toggle'
-    }
-  },published5: {
-    type: Boolean,
-    label: "是否发布",
-    defaultValue: true,
-    autoform: {
-      type: 'toggle'
-    }
-  },published4: {
-    type: Boolean,
-    label: "是否发布",
-    defaultValue: true,
-    autoform: {
-      type: 'toggle'
-    }
-  },published: {
-    type: Boolean,
-    label: "是否发布",
-    defaultValue: true,
-    autoform: {
-      type: 'toggle'
-    }
-  },published3: {
-    type: Boolean,
-    label: "是否发布",
-    defaultValue: true,
-    autoform: {
-      type: 'toggle'
-    }
-  },
-  avatarUrl: {
+  avatarUrl:
+  {
     type: String,
     optional: true,
-
     autoform: {
-
        type: "hidden"
-
     }
   },
-
-  createdAt: {
+  createdAt:
+  {
     type: Date
   }
 }));
-
 
 SimpleSchema.messages({
   required: "[label] 是必填项！",
@@ -198,16 +72,16 @@ SimpleSchema.messages({
   expectedObject: "[label] 必须是对象",
   expectedConstructor: "[label] 必须属于 [type]",
   regEx: [
-    {msg: "[label] 格式验证失败"},
-    {exp: SimpleSchema.RegEx.Email, msg: "[label] 必须是有效的电子邮件地址"},
-    {exp: SimpleSchema.RegEx.WeakEmail, msg: "[label] 必须是有效的电子邮件地址"},
-    {exp: SimpleSchema.RegEx.Domain, msg: "[label] 必须是有效的域名"},
-    {exp: SimpleSchema.RegEx.WeakDomain, msg: "[label] 必须是有效的域名"},
-    {exp: SimpleSchema.RegEx.IP, msg: "[label] 必须是有效的 IPv4 或 IPv6 地址"},
-    {exp: SimpleSchema.RegEx.IPv4, msg: "[label] 必须是有效的 IPv4 地址"},
-    {exp: SimpleSchema.RegEx.IPv6, msg: "[label] 必须是有效的 IPv6 地址"},
-    {exp: SimpleSchema.RegEx.Url, msg: "[label] 必须是有效的网址"},
-    {exp: SimpleSchema.RegEx.Id, msg: "[label] 必须是数字组成的ID"}
-  ],
+          {msg: "[label] 格式验证失败"},
+          {exp: SimpleSchema.RegEx.Email, msg: "[label] 必须是有效的电子邮件地址"},
+          {exp: SimpleSchema.RegEx.WeakEmail, msg: "[label] 必须是有效的电子邮件地址"},
+          {exp: SimpleSchema.RegEx.Domain, msg: "[label] 必须是有效的域名"},
+          {exp: SimpleSchema.RegEx.WeakDomain, msg: "[label] 必须是有效的域名"},
+          {exp: SimpleSchema.RegEx.IP, msg: "[label] 必须是有效的 IPv4 或 IPv6 地址"},
+          {exp: SimpleSchema.RegEx.IPv4, msg: "[label] 必须是有效的 IPv4 地址"},
+          {exp: SimpleSchema.RegEx.IPv6, msg: "[label] 必须是有效的 IPv6 地址"},
+          {exp: SimpleSchema.RegEx.Url, msg: "[label] 必须是有效的网址"},
+          {exp: SimpleSchema.RegEx.Id, msg: "[label] 必须是数字组成的ID"}
+         ],
   keyNotInSchema: "[key] 没有找到这项数据"
 });
